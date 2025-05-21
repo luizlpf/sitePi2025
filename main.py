@@ -172,8 +172,11 @@ def delete_usuario(usuario_id):
 
 @app.route('/criar_tabelas')
 def criar_tabelas():
-    db.create_all()
-    return "Tabelas criadas com sucesso!"
+    try:
+        db.create_all()
+        return "Tabelas criadas com sucesso no banco remoto!"
+    except Exception as e:
+        return f"Erro ao criar tabelas: {e}"
 
 
 # Rodar o app
