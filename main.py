@@ -170,6 +170,12 @@ def delete_usuario(usuario_id):
     flash('Usuário deletado com sucesso!', 'alert-danger')
     return redirect(url_for('usuarios'))
 
+@app.route('/criar_tabelas')
+def criar_tabelas():
+    db.create_all()
+    return "Tabelas criadas com sucesso!"
+
+
 # Rodar o app
 if __name__ == '__main__':
     with app.app_context():
