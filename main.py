@@ -11,6 +11,8 @@ import os
 app = Flask(__name__)
 app.config['DEBUG'] = False
 
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'chave-padrao-segura')
+
 # Configuração do banco de dados
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 
