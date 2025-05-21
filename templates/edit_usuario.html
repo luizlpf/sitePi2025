@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container mt-5">
+    <h2>Editar Usuário</h2>
+    <form method="POST" class="row g-3">
+        <div class="col-md-6 col-lg-4">
+            <label class="form-label">Nome</label>
+            <input type="text" name="name" class="form-control" value="{{ usuario.name }}">
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <label class="form-label">Endereço</label>
+            <input type="text" name="address" class="form-control" value="{{ usuario.address }}">
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <label class="form-label">CEP</label>
+            <input type="text" name="postcode" class="form-control" value="{{ usuario.postcode }}">
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <label class="form-label">Cidade</label>
+            <input type="text" name="city" class="form-control" value="{{ usuario.city }}">
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <label class="form-label">Contato</label>
+            <input type="text" name="contact" class="form-control" value="{{ usuario.contact }}">
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <label class="form-label">Cargo</label>
+            <input type="text" name="cargo" class="form-control" value="{{ usuario.cargo }}">
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" value="{{ usuario.email }}">
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <label class="form-label">Website</label>
+            <input type="text" name="website" class="form-control" value="{{ usuario.website }}">
+        </div>
+        <div class="col-12">
+            <label class="form-label">Outros</label>
+            <textarea name="others" class="form-control" rows="2">{{ usuario.others }}</textarea>
+        </div>
+        <div class="col-12 text-end">
+            <button type="submit" class="btn btn-success mt-2">Salvar</button>
+            <a href="{{ url_for('usuarios') }}" class="btn btn-secondary mt-2 ms-2">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
