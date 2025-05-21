@@ -6,12 +6,14 @@ from model.Usuario import Usuario
 from model.UsuarioAuth import UsuarioAuth
 from flask_mail import Mail, Message
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+import os
 
 app = Flask(__name__)
 app.config['DEBUG'] = False
 
 # Configuração do banco de dados
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://usuario:123@localhost/clientes'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 #importar do render
