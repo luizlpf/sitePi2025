@@ -21,7 +21,14 @@ db.init_app(app)
 #importar do render
 
 
-
+# Configuração do Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'joaozinho1357848799@gmail.com'
+app.config['MAIL_PASSWORD'] = '123'
+app.config['MAIL_DEFAULT_SENDER'] = 'joaozinho1357848799@gmail.com'
+mail = Mail(app)
 
 # Configuração do Flask-Login
 login_manager = LoginManager(app)
